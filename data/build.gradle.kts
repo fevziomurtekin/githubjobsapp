@@ -1,5 +1,8 @@
 plugins{
     id(Plugins.androidlibrary)
+    kotlin(Plugins.kotlinAndroid)
+    kotlin(Plugins.kotlinAndroidExtensions)
+    kotlin(Plugins.kotlinKaptExtensions)
 }
 
 android{
@@ -15,5 +18,7 @@ android{
 
 dependencies{
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
-
+    implementation(kotlin("stdlib-jdk7", Versions.kotlinVersion))
+    /** gson **/
+    implementation(Dependencies.gson)
 }

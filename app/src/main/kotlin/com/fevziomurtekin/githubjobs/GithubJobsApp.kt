@@ -6,4 +6,7 @@ import com.fevziomurtekin.githubjobs.base.BaseApplication
 
 class GithubJobsApp : BaseApplication(){
 
+    override fun onCreate() {
+        super.onCreate()
+    }
 }

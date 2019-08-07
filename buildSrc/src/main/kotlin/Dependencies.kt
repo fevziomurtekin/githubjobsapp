@@ -20,6 +20,7 @@ object Dependencies{
 
     /* Glide */
     val glide               = "com.github.bumptech.glide:glide:${Versions.glide_version}"
+    val glide_okhttp        = "com.github.bumptech.glide:okhttp3-integration:${Versions.glide_version}"
     val glide_compiler      = "com.github.bumptech.glide:compiler:${Versions.glide_version}"
 
     /* Retrofit */
