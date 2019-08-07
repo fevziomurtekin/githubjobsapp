@@ -22,6 +22,7 @@ object Plugins{
     val javaVersion                 = "1.8"
     val main                        = "main"
     val release                     = "release"
+    val debug                       = "debug"
     val proguardTxt                 = "proguard-android.txt"
     val proguardPro                 = "proguard-rules.pro"
     val baseApplicationId           = "com.fevziomurtekin.githubjobs.base"

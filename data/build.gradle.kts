@@ -29,8 +29,9 @@ dependencies{
     compile("androidx.core:core-ktx:+")
     /** pagging **/
     implementation(Dependencies.pagging)
-
     implementation(Dependencies.lifecycle)
+    /** Room **/
+    implementation(Dependencies.room)
 
 }
 repositories {
