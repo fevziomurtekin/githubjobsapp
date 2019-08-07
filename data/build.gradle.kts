@@ -30,8 +30,21 @@ dependencies{
     /** pagging **/
     implementation(Dependencies.pagging)
     implementation(Dependencies.lifecycle)
-    /** Room **/
+    /** retrofit **/
+    implementation(Dependencies.okhttp)
+    implementation(Dependencies.okhttp_logging)
+    implementation(Dependencies.retrofit)
+    implementation(Dependencies.retrofit_convertor)
+    implementation(Dependencies.retrofit_adapter)
+    /** gson **/
+    implementation(Dependencies.gson)
+    /** room **/
     implementation(Dependencies.room)
+    implementation(Dependencies.room_rxjava)
+    kapt(Dependencies.room_compiler)
+    implementation(Dependencies.room_androidx)
+    /** timber **/
+    implementation(Dependencies.timber)
 
 }
 repositories {

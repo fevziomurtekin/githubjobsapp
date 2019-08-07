@@ -1,6 +1,5 @@
-package com.fevziomurtekin.githubjobs.domain
+package com.fevziomurtekin.githubjobs.data
 
-import com.fevziomurtekin.githubjobs.data.JobsResponse
 import okhttp3.HttpUrl
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -14,12 +13,16 @@ import timber.log.Timber
 interface GithubjobsApi {
 
     @GET("positions.json")
-    fun getJobs(@Query("page") page:Long,
+    fun getJobs(@Query("description") descriptions:String,
+                @Query("location") location:String):Call<ListingResponse>
+
+    @GET("positions.json")
+    fun getJobsAfter(@Query("page") page:Long,
                 @Query("description") descriptions:String,
-                @Query("location") location:String):Call<List<ListingResponse>>
+                @Query("location") location:String):Call<ListingResponse>
 
 
-    class ListingResponse(val data:ListingData)
+    class ListingResponse(val data: ListingData)
 
     class ListingData(
         val children: List<JobChildrenResponse>,
@@ -31,8 +34,9 @@ interface GithubjobsApi {
 
     companion object{
         private const val BASE_URL = "https://jobs.github.com/"
-        fun create():GithubjobsApi = create(HttpUrl.parse(BASE_URL)!!)
-        fun create(httpUrl:HttpUrl):GithubjobsApi{
+        fun create(): GithubjobsApi =
+            create(HttpUrl.parse(BASE_URL)!!)
+        fun create(httpUrl:HttpUrl): GithubjobsApi {
             val logger = HttpLoggingInterceptor(HttpLoggingInterceptor.Logger {
                 Timber.d(it)
             })
