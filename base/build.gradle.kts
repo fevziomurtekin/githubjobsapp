@@ -26,15 +26,16 @@ dependencies{
     implementation(Dependencies.koin_architecture)
     testImplementation(Dependencies.koin_test)
     androidTestImplementation(Dependencies.koin_android_test)
-
     /** glide **/
     implementation(Dependencies.glide)
     kapt(Dependencies.glide_compiler)
     implementation(Dependencies.glide_okhttp) {
         exclude(mapOf("group" to "glide-parent"))
     }
-
     /** Timber **/
     implementation(Dependencies.timber)
-
+    /** Recyclerview **/
+    implementation(Dependencies.recyclerview)
+    /** data modules **/
+    implementation(project(Modules.data))
 }

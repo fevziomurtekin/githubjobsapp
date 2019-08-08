@@ -1,4 +1,4 @@
-package com.mobilemovement.kotlintvmaze.base
+package com.fevziomurtekin.githubjobs.base
 
 enum class Status {
     SUCCESS,
