@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/navigation.xml"
+            app:startDestination="@id/start"
+>
+    <fragment
+        android:id="@+id/start"
+        android:name="com.fevziomurtekin.githubjobs.ui.StartFragment"
+        tools:layout="@layout/start_fragment"
+    >
+        <action
+            android:id="@+id/action_start"
+            app:destination="@+id/home"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_in_rigth"
+            app:enterAnim="@anim/slide_in_rigth"
+            app:exitAnim="@anim/slide_in_left"
+        />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/home"
+        android:name="com.fevziomurtekin.githubjobs.ui.HomeFragment"
+        tools:layout="@layout/home_fragment"
+    >
+
+        <action
+                android:id="@+id/action_detail"
+                app:destination="@+id/details"
+                app:popEnterAnim="@anim/slide_in_left"
+                app:popExitAnim="@anim/slide_in_rigth"
+                app:enterAnim="@anim/slide_in_rigth"
+                app:exitAnim="@anim/slide_in_left"
+        />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/details"
+        android:name="com.fevziomurtekin.githubjobs.ui.DetailsFragment"
+        tools:layout="@layout/details_fragment"
+    />
+
+
+</navigation>
