@@ -108,7 +108,7 @@ dependencies{
 
     /** modules **/
     implementation(project(Modules.data))
-    implementation(project(Modules.domain))
     implementation(project(Modules.base))
+    implementation(project(Modules.view))
 
 }

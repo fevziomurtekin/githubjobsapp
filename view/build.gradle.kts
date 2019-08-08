@@ -1,9 +1,13 @@
+val kotlin_version: String by extra
 plugins{
     id(Plugins.androidlibrary)
     kotlin(Plugins.kotlinAndroid)
     kotlin(Plugins.kotlinAndroidExtensions)
     kotlin(Plugins.kotlinKaptExtensions)
-
+}
+apply {
+    plugin("kotlin-android")
+    plugin("kotlin-android-extensions")
 }
 
 android{
@@ -15,20 +19,24 @@ android{
         versionName = Plugins.versionName
     }
 
-    buildTypes {
-        getByName(Plugins.debug) {
-            isMinifyEnabled = true
-            proguardFiles(getDefaultProguardFile(Plugins.proguardTxt), Plugins.proguardPro)
-        }
-    }
-
-
 }
 
 dependencies{
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
-    implementation(Dependencies.lifecycle)
-    /** data module **/
-    implementation(project(Modules.data))
+    implementation(kotlin("stdlib-jdk7", Versions.kotlinVersion))
+    /** gson **/
+    implementation(Dependencies.gson)
+    compile("androidx.core:core-ktx:+")
 
+    implementation(Dependencies.lifecycle)
+    kapt(Dependencies.lifecycle_compiler)
+    implementation(project(Modules.data))
+    implementation(Dependencies.pagging)
+    implementation(Dependencies.room_rxjava)
+
+
+
+}
+repositories {
+    mavenCentral()
 }

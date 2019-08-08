@@ -1,42 +1,32 @@
 package com.fevziomurtekin.githubjobs.data
 
+import io.reactivex.Single
 import okhttp3.HttpUrl
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Call
 import retrofit2.Retrofit
+import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
 import retrofit2.http.Query
 import timber.log.Timber
 
-interface GithubjobsApi {
+interface NetworkService {
 
     @GET("positions.json")
-    fun getJobs(@Query("description") descriptions:String,
-                @Query("location") location:String):Call<ListingResponse>
-
-    @GET("positions.json")
-    fun getJobsAfter(@Query("page") page:Long,
+    fun getJobs(@Query("page") page:Int,
+                @Query("loadSize") loadSize:Int,
                 @Query("description") descriptions:String,
-                @Query("location") location:String):Call<ListingResponse>
+                @Query("location") location:String):Single<List<JobsResponse>>
 
 
-    class ListingResponse(val data: ListingData)
-
-    class ListingData(
-        val children: List<JobChildrenResponse>,
-        val after: String?,
-        val before: String?
-    )
-
-    class JobChildrenResponse(val data:JobsResponse)
 
     companion object{
         private const val BASE_URL = "https://jobs.github.com/"
-        fun create(): GithubjobsApi =
+        fun create(): NetworkService =
             create(HttpUrl.parse(BASE_URL)!!)
-        fun create(httpUrl:HttpUrl): GithubjobsApi {
+        fun create(httpUrl:HttpUrl): NetworkService {
             val logger = HttpLoggingInterceptor(HttpLoggingInterceptor.Logger {
                 Timber.d(it)
             })
@@ -49,9 +39,10 @@ interface GithubjobsApi {
             return Retrofit.Builder()
                 .baseUrl(httpUrl)
                 .client(client)
+                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .addConverterFactory(GsonConverterFactory.create())
                 .build()
-                .create(GithubjobsApi::class.java)
+                .create(NetworkService::class.java)
         }
 
     }

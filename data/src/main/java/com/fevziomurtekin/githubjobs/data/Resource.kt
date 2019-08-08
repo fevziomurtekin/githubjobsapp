@@ -1,13 +1,11 @@
-package com.fevziomurtekin.githubjobs.base
+package com.fevziomurtekin.githubjobs.data
 
-import com.fevziomurtekin.githubjobs.data.Resource
-import com.fevziomurtekin.githubjobs.data.Status
 
 data class Resource<out T>(val status: Status, val data: T?, val message: String?) {
     companion object {
         fun <T> success(data: T? = null): Resource<T> {
             return Resource(
-                Status.SUCCES,
+                Status.SUCCESS,
                 data,
                 null
             )
@@ -26,14 +24,6 @@ data class Resource<out T>(val status: Status, val data: T?, val message: String
                 Status.LOADING,
                 data,
                 null
-            )
-        }
-
-        fun <T> empty(msg: String): Resource<T> {
-            return Resource(
-                Status.EMPTY,
-                null,
-                msg
             )
         }
     }

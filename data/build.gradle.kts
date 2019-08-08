@@ -45,6 +45,9 @@ dependencies{
     implementation(Dependencies.room_androidx)
     /** timber **/
     implementation(Dependencies.timber)
+    /** rx **/
+    implementation(Dependencies.rxjava)
+    implementation(Dependencies.rxandroid)
 
 }
 repositories {

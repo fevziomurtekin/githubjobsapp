@@ -1,1 +1,1 @@
-include(Modules.app,Modules.base,Modules.data,Modules.domain)
+include(Modules.app,Modules.base,Modules.data,Modules.view)
