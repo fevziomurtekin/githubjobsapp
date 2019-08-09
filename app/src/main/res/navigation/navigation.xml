@@ -2,15 +2,16 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
             xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
             android:id="@+id/navigation"
-            app:startDestination="@id/start"
+            app:startDestination="@id/home"
+
 >
     <fragment
-        android:id="@+id/start"
-        android:name="com.fevziomurtekin.githubjobs.ui.StartFragment"
+        android:id="@+id/settings"
+        android:name="com.fevziomurtekin.githubjobs.ui.SettingsFragment"
         tools:layout="@layout/start_fragment"
     >
         <action
-            android:id="@+id/action_start"
+            android:id="@+id/action_home"
             app:destination="@+id/home"
             app:popEnterAnim="@anim/slide_in_left"
             app:popExitAnim="@anim/slide_out_right"
@@ -42,6 +43,16 @@
                 app:popExitAnim="@anim/slide_out_right"
                 app:enterAnim="@anim/slide_in_right"
                 app:exitAnim="@anim/slide_out_left"
+        />
+
+        <action
+            android:id="@+id/action_settings"
+            app:destination="@+id/settings"
+            app:popUpToInclusive="false"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
         />
 
     </fragment>

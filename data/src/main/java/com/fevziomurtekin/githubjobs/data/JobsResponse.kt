@@ -6,6 +6,7 @@ import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
 import kotlinx.android.parcel.Parcelize
 
+@Parcelize
 @Entity(tableName = "jobs")
 data class JobsResponse(
     @SerializedName("company")
@@ -31,4 +32,4 @@ data class JobsResponse(
     val type: String,
     @SerializedName("url")
     val url: String
-)
+):Parcelable

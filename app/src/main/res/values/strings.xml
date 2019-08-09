@@ -3,7 +3,7 @@
     <string name="app_name">GithubJobs</string>
     <string name="skip">skip</string>
     <string name="hellothere_message">Hello there, we ask you firstly searching where is job, then your searching job what title. Let\'s start.</string>
-    <string name="which_location">which location would you like to look for work?</string>
+    <string name="which_location">Which location would you like to look for work?</string>
     <string name="what_defination">What definition are you looking for a job?</string>
     <string name="enter_location">Enter location</string>
     <string name="enter_job_title">Enter Job title</string>

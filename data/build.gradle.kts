@@ -19,6 +19,10 @@ android{
         versionName = Plugins.versionName
     }
 
+    androidExtensions {
+        isExperimental = true
+    }
+
 }
 
 dependencies{

@@ -11,13 +11,12 @@ import com.fevziomurtekin.githubjobs.R
 import com.fevziomurtekin.githubjobs.data.BannerData
 import com.fevziomurtekin.githubjobs.data.JobDataRequest
 import kotlinx.android.synthetic.main.banner_fragment.*
-import kotlinx.android.synthetic.main.start_fragment.*
 import timber.log.Timber
 
-
 class BannerFragment(val position:Int,
-                     val data:BannerData,
-                     var jobDataRequest: JobDataRequest) : Fragment(){
+                     val data: BannerData,
+                     var jobDataRequest: JobDataRequest
+) : Fragment(){
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.banner_fragment,container,false)
