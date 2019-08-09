@@ -1,4 +1,4 @@
-package com.fevziomurtekin.githubjobs
+package com.fevziomurtekin.githubjobs.view
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

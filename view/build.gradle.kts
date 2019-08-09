@@ -33,6 +33,7 @@ dependencies{
     implementation(project(Modules.data))
     implementation(Dependencies.pagging)
     implementation(Dependencies.room_rxjava)
+    implementation(Dependencies.material_design)
 
 
 

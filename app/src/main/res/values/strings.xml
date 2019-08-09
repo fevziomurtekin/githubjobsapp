@@ -7,4 +7,6 @@
     <string name="what_defination">What definition are you looking for a job?</string>
     <string name="enter_location">Enter location</string>
     <string name="enter_job_title">Enter Job title</string>
+    <string name="clear">clear</string>
+    <string name="add_location_destination">Add filter</string>
 </resources>

@@ -21,6 +21,8 @@ dependencies{
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
     implementation(kotlin("stdlib-jdk7", Versions.kotlinVersion))
     implementation(Dependencies.constraint_layout)
+    implementation(Dependencies.material_design)
+
     /** koin **/
     implementation(Dependencies.koin)
     implementation(Dependencies.koin_architecture)

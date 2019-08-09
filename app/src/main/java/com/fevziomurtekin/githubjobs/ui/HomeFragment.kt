@@ -4,10 +4,11 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.LinearLayout
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.navigation.Navigation
-import com.fevziomurtekin.githubjobs.JobsViewModel
+import com.fevziomurtekin.githubjobs.view.JobsViewModel
 import com.fevziomurtekin.githubjobs.R
 import com.fevziomurtekin.githubjobs.data.JobDataRequest
 import com.fevziomurtekin.githubjobs.data.KeywordExt
@@ -36,8 +37,12 @@ class HomeFragment : Fragment() {
             else jobDataRequest = GsonBuilder().create().fromJson(it,JobDataRequest::class.java)
         }
 
-        //TODO will be fixing bugs
-        //initChips()
+        btn_clear.setOnClickListener {
+            StorageExt.removePref(context!!,KeywordExt.INTENT_ARGUMENT)
+            Navigation.findNavController(view).navigate(R.id.action_settings)
+        }
+
+        initChips()
         initAdapter()
         initState()
     }
@@ -53,18 +58,33 @@ class HomeFragment : Fragment() {
 
         map.keys.forEach { c->
             val chips = Chip(context)
-            chips.chipBackgroundColor = resources.getColorStateList(android.R.color.darker_gray)
-            chips.chipCornerRadius = 7.5f
-            chips.chipText = map[c]
+            chips.chipBackgroundColor = resources.getColorStateList(R.color.colorAccent)
+            chips.chipCornerRadius = 15f
+            chips.setTextColor(resources.getColor(android.R.color.white))
+            chips.text = map[c]
             when(c){
                 0->{
                     chips.chipIcon = resources.getDrawable(R.drawable.ic_location)
+                    chips.chipIconTint = resources.getColorStateList(android.R.color.holo_red_dark)
+                    chips.setOnCloseIconClickListener {
+
+                    }
                 }
                 1->{
                     chips.chipIcon = resources.getDrawable(R.drawable.ic_description)
+                    chips.chipIconTint = resources.getColorStateList(android.R.color.holo_green_light)
+                    chips.setOnCloseIconClickListener {
+
+                    }
                 }
             }
             ll_chips.addView(chips)
+            (chips.layoutParams as LinearLayout.LayoutParams).marginEnd = 5
+        }
+
+        if(map.isEmpty()){
+            hsv_chips.visibility = View.GONE
+            btn_clear.text = getString(R.string.add_location_destination)
         }
     }
 

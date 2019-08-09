@@ -27,8 +27,9 @@ class JobListAdapter (private val retry: () -> Unit)
 
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
-
-        (holder as BaseViewHolder).bind(getItem(position))
+        try {
+            (holder as BaseViewHolder).bind(getItem(position))
+        }catch (e:Exception){}
 
     }
 

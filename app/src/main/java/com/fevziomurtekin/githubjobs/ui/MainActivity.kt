@@ -2,7 +2,7 @@ package com.fevziomurtekin.githubjobs.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.fevziomurtekin.githubjobs.JobsViewModel
+import com.fevziomurtekin.githubjobs.view.JobsViewModel
 import com.fevziomurtekin.githubjobs.R
 import org.koin.android.architecture.ext.viewModel
 

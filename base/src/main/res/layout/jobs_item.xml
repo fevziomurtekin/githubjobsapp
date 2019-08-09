@@ -1,20 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_height="wrap_content"
+        xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+        app:cardCornerRadius="5dp"
+        android:layout_marginLeft="7.5dp"
+        android:layout_marginRight="7.5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        app:cardElevation="3dp"
+        android:background="@android:color/white"
+>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         xmlns:tools="http://schemas.android.com/tools"
         android:id="@+id/cl_job_item"
-        xmlns:android="http://schemas.android.com/apk/res/android"
 >
-
-
-    <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:id="@+id/view"
-            android:background="@android:color/darker_gray"
-            app:layout_constraintBottom_toBottomOf="parent"
-    />
 
     <ImageView
             android:layout_width="80dp"
@@ -23,7 +25,7 @@
             android:scaleType="fitCenter"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintBottom_toBottomOf="@id/view"
+            app:layout_constraintBottom_toBottomOf="parent"
     />
 
     <LinearLayout
@@ -73,8 +75,8 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="0.33"
-                android:id="@+id/tv_job_date"
-                android:drawableLeft="@drawable/ic_date_range_black_24dp"
+                android:id="@+id/tv_job_type"
+                android:drawableLeft="@drawable/ic_work"
                 android:drawableTint="@android:color/holo_blue_dark"
                 android:textSize="14sp"
                 android:textColor="@android:color/black"
@@ -93,7 +95,7 @@
             android:id="@+id/tv_job_title"
             app:layout_constraintTop_toBottomOf="@+id/ll_job_informations"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintBottom_toBottomOf="@id/view"
+            app:layout_constraintBottom_toBottomOf="parent"
             android:textSize="15sp"
             android:layout_marginLeft="5dp"
             android:gravity="center_vertical"
@@ -104,3 +106,4 @@
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>

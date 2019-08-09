@@ -15,7 +15,7 @@ class BaseViewHolder(view:View) : RecyclerView.ViewHolder(view){
             if (response != null) {
                 itemView.tv_job_company.text = response.company
                 itemView.tv_job_location.text = response.location
-                itemView.tv_job_date.text = response.created_at
+                itemView.tv_job_type.text = response.type
                 itemView.tv_job_title.text = response.title
                 Glide.with(itemView)
                     .load(response.company_logo)

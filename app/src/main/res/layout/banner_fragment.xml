@@ -62,6 +62,7 @@
                         android:layout_height="wrap_content"
                         android:id="@+id/tev_location_description"
                         android:fontFamily="sans-serif-medium"
+                        android:background="@android:color/white"
                         android:textSize="15sp"
                 />
 

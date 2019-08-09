@@ -23,6 +23,7 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:tabPadding="10dp"
+            android:background="@android:color/transparent"
             app:tabGravity="center"
             app:tabIndicatorHeight="0dp"
             app:layout_constraintWidth_percent="0.5"
