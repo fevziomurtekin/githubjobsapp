@@ -1,23 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout
+<androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent" xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:background="@android:color/transparent"
-        xmlns:android="http://schemas.android.com/apk/res/android">
+        android:layout_height="match_parent"
+        xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools">
 
-    <fragment
+
+    <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/frame_layout"
-            android:name="androidx.navigation.fragment.NavHostFragment"
-            app:defaultNavHost="true"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
             app:layout_constraintTop_toTopOf="parent"
-            app:navGraph="@navigation/navigation"
-    />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            tools:context=".ui.main.MainActivity"
+            android:background="@android:color/transparent">
 
+        <fragment
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/default_fragment"
+                android:name="androidx.navigation.fragment.NavHostFragment"
+                app:defaultNavHost="true"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:navGraph="@navigation/navigation"
+        />
 
+    </FrameLayout>
 
-</FrameLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
