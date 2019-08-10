@@ -8,7 +8,6 @@ Used <a href="https://jobs.github.com/api">Github Jobs API</a>. <br><br>
 
 - Kotlin 
 - Kotlin DSL
-- Observer
 - Koin
 - Android Jetpack
   - LiveData
