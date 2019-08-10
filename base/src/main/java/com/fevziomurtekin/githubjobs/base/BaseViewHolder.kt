@@ -10,7 +10,7 @@ import kotlinx.android.synthetic.main.jobs_item.view.*
 
 class BaseViewHolder(view:View) : RecyclerView.ViewHolder(view){
 
-    fun bind(response:JobsResponse?){
+    fun bind(response:JobsResponse?,onClickListener:View.OnClickListener){
         try {
             if (response != null) {
                 itemView.tv_job_company.text = response.company
@@ -20,6 +20,9 @@ class BaseViewHolder(view:View) : RecyclerView.ViewHolder(view){
                 Glide.with(itemView)
                     .load(response.company_logo)
                     .into(itemView.iv_job_item)
+
+                itemView.setOnClickListener(onClickListener)
+                itemView.tag = response
             }
         }catch (e:Exception){}
     }
