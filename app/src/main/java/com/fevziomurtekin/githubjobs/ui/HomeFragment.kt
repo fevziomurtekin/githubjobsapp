@@ -5,15 +5,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
+import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.navigation.Navigation
 import com.fevziomurtekin.githubjobs.view.JobsViewModel
 import com.fevziomurtekin.githubjobs.R
-import com.fevziomurtekin.githubjobs.data.JobDataRequest
-import com.fevziomurtekin.githubjobs.data.KeywordExt
-import com.fevziomurtekin.githubjobs.data.Status
-import com.fevziomurtekin.githubjobs.data.StorageExt
+import com.fevziomurtekin.githubjobs.data.*
 import com.google.android.material.chip.Chip
 import com.google.gson.GsonBuilder
 import kotlinx.android.synthetic.main.home_fragment.*
@@ -89,7 +87,10 @@ class HomeFragment : Fragment() {
     }
 
     private fun initAdapter(){
-        jobListAdapter = JobListAdapter { viewModel.retry() }
+        jobListAdapter = JobListAdapter({viewModel.retry()}, View.OnClickListener {
+            val response = it.tag as JobsResponse
+            Navigation.findNavController(view!!).navigate(R.id.action_detail, bundleOf(KeywordExt.INTENT_ARGUMENT to response))
+        })
         rv_jobs.adapter = jobListAdapter
         viewModel.jobList.observe(this, Observer {
             jobListAdapter.submitList(it)

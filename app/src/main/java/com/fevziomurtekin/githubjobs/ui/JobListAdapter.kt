@@ -1,5 +1,6 @@
 package com.fevziomurtekin.githubjobs.ui
 
+import android.view.View
 import android.view.ViewGroup
 import androidx.paging.PagedListAdapter
 import androidx.recyclerview.widget.DiffUtil
@@ -8,7 +9,8 @@ import com.fevziomurtekin.githubjobs.base.BaseViewHolder
 import com.fevziomurtekin.githubjobs.data.JobsResponse
 import com.fevziomurtekin.githubjobs.data.Status
 
-class JobListAdapter (private val retry: () -> Unit)
+class JobListAdapter (private val retry: () -> Unit,
+                      val onClickListener: View.OnClickListener)
     :PagedListAdapter<JobsResponse,RecyclerView.ViewHolder>(jobDiffCallback){
 
     private var state = Status.LOADING
@@ -28,7 +30,7 @@ class JobListAdapter (private val retry: () -> Unit)
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         try {
-            (holder as BaseViewHolder).bind(getItem(position))
+            (holder as BaseViewHolder).bind(getItem(position),onClickListener)
         }catch (e:Exception){}
 
     }

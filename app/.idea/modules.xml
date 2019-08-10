@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../Githubjobs.iml" filepath="$PROJECT_DIR$/../Githubjobs.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app.iml" filepath="$PROJECT_DIR$/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../base/base.iml" filepath="$PROJECT_DIR$/../base/base.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../data/data.iml" filepath="$PROJECT_DIR$/../data/data.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../view/view.iml" filepath="$PROJECT_DIR$/../view/view.iml" />
+    </modules>
+  </component>
+</project>
