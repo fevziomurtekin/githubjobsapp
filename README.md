@@ -1,5 +1,3 @@
-# GithubJobs App
-
 <p align="center"><img src="./art/githubjobs.png" width="320" height="100"/></p>
 
 GithubJobs app which was built with modular structure, Kotlin DSL, Koin, Observer pattern.<br><br>
