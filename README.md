@@ -18,6 +18,7 @@ Used <a href="https://jobs.github.com/api">Github Jobs API</a>. <br><br>
   - Constraint layout
 - Retrofit2
 - Timber
+- Material Design
 - Glide
 
 <H2> Layers </H2>
