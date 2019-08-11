@@ -1,3 +1,6 @@
+
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/b1db89296998419a9c529d17b39bc786)](https://app.codacy.com/app/fevziomurtekin/githubjobsapp?utm_source=github.com&utm_medium=referral&utm_content=fevziomurtekin/githubjobsapp&utm_campaign=Badge_Grade_Settings)
+
 <p align="center"><img src="./art/githubjobs.png" width="320" height="100"/></p>
 
 GithubJobs app which was built with modular structure, Kotlin DSL, Koin, Observer pattern.<br><br>
