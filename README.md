@@ -3,8 +3,6 @@
 
 <p align="center"><img src="./art/githubjobs.png" width="320" height="100"/></p>
 
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/dd58c7da42b8435cafca8c7e03efe77a)](https://www.codacy.com/app/fevziomurtekin/githubjobsapp?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=fevziomurtekin/githubjobsapp&amp;utm_campaign=Badge_Grade)
-
 GithubJobs app which was built with modular structure, Kotlin DSL, Koin, Observer pattern.<br><br>
 
 Used <a href="https://jobs.github.com/api">Github Jobs API</a>. <br><br>
